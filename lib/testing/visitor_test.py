@@ -50,7 +50,7 @@ class TestVisitor:
 
         # uncomment the next two lines if using Exceptions
         # with pytest.raises(Exception):
-        #     Visitor("TooLongTobeValid")
+            # Visitor("TooLongTobeValid")
 
     def test_has_many_trips(self):
         """visitor has many Trips"""
