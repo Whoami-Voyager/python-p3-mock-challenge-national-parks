@@ -29,6 +29,10 @@ class NationalPark:
         visitors = [trip.visitor for trip in self.trips()]
         return max(set(visitors), key=visitors.count)
 
+    @classmethod
+    def most_visited(cls):
+        return max(cls.all, key=lambda park: park.total_visits())
+
 class Trip:
 
     all = []
@@ -110,4 +114,5 @@ class Visitor:
         return list({trip.national_park for trip in self.trips()})
     
     def total_visits_at_park(self, park):
-        pass
+        if not park.visitors():
+            return len([trip for trip in self.trips() if trip.national_park is self])
